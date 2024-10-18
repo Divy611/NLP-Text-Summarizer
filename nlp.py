@@ -154,7 +154,6 @@ def tf_idf_matrix(tf_matrix, idf_matrix):
 
 # Function to rate every sentence with some score calculated on basis of Tf-Idf
 def score_sentences(tf_idf_matrix):
-
     sentenceScore = {}
 
     for sent, f_table in tf_idf_matrix.items():
@@ -211,10 +210,10 @@ sentence_scores = score_sentences(tf_idf_matrix)
 threshold = average_score(sentence_scores)
 
 summary = create_summary(sentences, sentence_scores, 1.3 * threshold)
-print("\n\n")
-print("*"*20, "Summary", "*"*20)
-print("\n")
-print(summary)
-print("\n\n")
-print("Total words in original article = ", num_words_in_original_text)
-print("Total words in summarized article = ", len(summary.split()))
+# print("\n\n")
+# print("*"*20, "Summary", "*"*20)
+# print("\n")
+# print(summary)
+# print("\n\n")
+# print("Total words in original article = ", num_words_in_original_text)
+# print("Total words in summarized article = ", len(summary.split()))
