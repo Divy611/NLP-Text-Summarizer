@@ -20,19 +20,13 @@ def summarize_article(article_text):
 
 def fetch_latest_news():
     top_headlines = newsapi.get_top_headlines(
-        language='en', country='us', page_size=10)  # Fetch up to 10 articles
+        language='en', country='us', page_size=10)
     return top_headlines['articles']
-
-# Display news and summaries
 
 
 def display_news_and_summaries():
     st.subheader("Latest News Summarized")
-
-    # Fetch news articles
     news_articles = fetch_latest_news()
-
-    # Summarize and display each article
     for idx, article in enumerate(news_articles):
         title = article['title']
         description = article['description']
@@ -43,9 +37,9 @@ def display_news_and_summaries():
         #    f"**Original Description**: {description if description else 'No description available'}")
         if description:
             summary = summarize_article(description)
-            st.write(f"**Summary**: {summary}")
+            st.write(f"**Summarised**: {summary}")
         else:
-            st.write("**Summary**: No description available to summarize.")
+            st.write("**Summarised**: No description available to summarize.")
 
         st.write(f"[Read more]({url})")
         st.write("---")
